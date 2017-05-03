@@ -1,3 +1,6 @@
+.form_bot-padding
+	padding-bottom: 70px
+
 .form__header
 	height: 200px
 	background: pink
@@ -10,7 +13,7 @@
 	right: 0
 	background: rgba(0,0,0,.5)
 	font-size: 20px
-	padding-left: 130px
+	padding-left: 70px
 	z-index: 1
 	height: 50px
 	line-height: 48px
@@ -26,21 +29,37 @@
 	bottom: 10px
 	left: 5px
 	z-index: 2
+	background: blue
 
 .form__fieldset
 	border: none
 
 .form__fieldset__title
 	background: #e8e8e8
-	height: 20px
-	line-height: 20px
-	padding: 0 15px
+	padding: 5px 15px
 	@include text-overflow
+	& .icon
+		width: 20px
+		height: 20px
+		background: pink
 
 .form__fieldset__field
 	border-bottom: solid #e8e8e8
-	padding: 5px
+	padding: 10px
 
 .form__fieldset__field input
-	border-bottom: 1px solid red
-	height: 20px
+	border: solid red
+	border-width: 0 0 1px 0
+	height: 30px
+	width: 100%
+	padding: 0 5px
+
+.form__submit
+	position: absolute
+	bottom: 0
+	width: 100%
+	padding: 20px
+	text-align: center
+	color: white
+	font-size: 20px
+	background: $primary-color

@@ -56,7 +56,10 @@ module.exports = {
           'url',
           'img'
         ]
-      }
+      },
+			{ test: /\.(woff|woff2)$/, loader: "url?limit=10000&minetype=application/font-woff" },
+			{test: /\.ttf$/,  loader: "url?limit=10000&mimetype=application/octet-stream" },
+      {test: /\.eot$/,  loader: "file" }
     ]
   }
 };
