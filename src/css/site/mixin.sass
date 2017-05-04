@@ -1,0 +1,36 @@
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+@mixin text-overflow
+	white-space: nowrap
+	text-overflow: ellipsis
+	overflow: hidden
+
+$primary-color: #cb202d
+
+@mixin scroll-y-ios
+	overflow-y: scroll
+	-webkit-overflow-scrolling: touch
+
+@mixin ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+@mixin box-shadow($top, $left, $blur, $color)
+	-webkit-box-shadow: $top $left $blur $color
+	-moz-box-shadow: $top $left $blur $color
+	box-shadow: $top $left $blur $color
+
+@mixin big_round_pic
+	width: 100px
+	height: 100px
+	border: 2px solid white
+	position: absolute
+	z-index: 2
+	background: #cb202d
+	background-position: center
+	background-repeat: no-repeat

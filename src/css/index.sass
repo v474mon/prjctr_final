@@ -1,10 +1,28 @@
-@import "./blocks/site/reset.css"
+@import "./site/reset.css"
 @import "./lib/_bootstrap.scss"
-@import "./blocks/site/mixin.sass"
-@import "./blocks/site/helpers.sass"
+@import "./site/mixin.sass"
+@import "./site/helpers.sass"
 @import "./blocks/icons.sass"
-@import "./blocks/site/color.sass"
-@import "./blocks/form/form.sass"
+@import "./site/color.sass"
+@import "./blocks/form.sass"
+@import "./blocks/bottom-bar.sass"
+@import "./blocks/app-header.sass"
+@import "./blocks/app-body.sass"
+@import "./blocks/card.sass"
+
+
+html, body
+	height: 100vh
+	min-height: 80vh
+	min-width: 100%
+	width: 100%
+	overflow: hidden
 
 body
-  background: url(../img/repeater.jpg)
+	position: relative
+	background: #e8e8e8
+	//height: 80vh !important
+
+#app-container, #app-container > div
+	overflow: hidden
+	height: 100%

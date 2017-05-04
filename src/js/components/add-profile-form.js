@@ -5,9 +5,9 @@ import React from 'react';
 class FormProfile extends React.Component {
   render() {
     return (
-			<section>
+			<div className=''>
 				<form className='form bg-white r form_bot-padding'>
-					<article className="form__header">
+					<article className="form__header edit_profile_header">
 						<div className="form__header__title">Edit Profile</div>
 						<div className="form__header__avatar header__avatar_small"></div>
 					</article>
@@ -44,7 +44,7 @@ class FormProfile extends React.Component {
 					</fieldset>
 					<div className="form__submit">Submit</div>
 				</form>
-			</section>
+			</div>
     );
   }
 }

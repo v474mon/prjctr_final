@@ -1,0 +1,50 @@
+.app-header
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	//height: 80px
+	height: 200px
+	z-index: 2
+	background: #cb202d
+	padding: 10px 15px
+	overflow: hidden
+
+.app-header__curved
+	background: #e8e8e8
+	left: -12px
+	right: -12px
+	bottom: -90px
+	position: absolute
+	height: 180px
+	+border-radius(50%)
+
+.app-header__btn-link
+	display: inline-block
+	width: 20px
+	height: 20px
+	background: pink
+
+.app-header__cat-icon
+	@include big_round_pic
+	+border-radius(50%)
+	top: 50px
+	left: 50%
+	margin-left: -50px
+
+
+.app-header__cat-title
+	position: absolute
+	top: 160px
+	left: 15px
+	right: 15px
+	text-align: center
+	font-weight: 600
+
+.icon-food-list
+	background-size: auto 60%
+	background-image: url(../img/icon-food-list.png)
+
+.icon-food-detail
+	background-size: auto 80%
+	background-image: url(../img/icon-food-detail.png)

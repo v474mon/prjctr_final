@@ -2,19 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>React</title>
   </head>
   <body>
+
     <!--
       there are TWO servers in this repo
       localhost:3000, serving this file. 3000 is chosen inside package.json
       localhost:8080, serving webpack generated stuff. 8080 is webpack's default port
     !-->
+		<div id="app-container"></div>
 
-    <div id="app-container">
-      <!-- this is where the root react component will get rendered -->
-    </div>
 
     <!-- include the bundle that contains all our scripts, produced by webpack -->
     <!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:8080 -->

@@ -2,9 +2,14 @@
 	padding-bottom: 70px
 
 .form__header
-	height: 200px
-	background: pink
+	height: 180px
+	background-size: cover
 	position: relative
+	background-position: center
+	background-repeat: no-repeat
+
+.edit_profile_header
+	background-image: url(../img/edit_profile_fon.jpg)
 
 .form__header__title
 	position: absolute
@@ -21,15 +26,10 @@
 	text-align: center
 
 .form__header__avatar
-	width: 100px
-	height: 100px
-	border: 2px solid white
+	@include big_round_pic
 	+border-radius(50%)
-	position: absolute
 	bottom: 10px
 	left: 5px
-	z-index: 2
-	background: blue
 
 .form__fieldset
 	border: none
@@ -37,6 +37,8 @@
 .form__fieldset__title
 	background: #e8e8e8
 	padding: 5px 15px
+	font-weight: 600
+	font-size: 16px
 	@include text-overflow
 	& .icon
 		width: 20px
@@ -47,7 +49,7 @@
 	border-bottom: solid #e8e8e8
 	padding: 10px
 
-.form__fieldset__field input
+.form__fieldset__field .form-control
 	border: solid red
 	border-width: 0 0 1px 0
 	height: 30px
@@ -63,3 +65,13 @@
 	color: white
 	font-size: 20px
 	background: $primary-color
+
+.form__btn__take-photo
+	background-image: url(../img/camera.png)
+	width: 100px
+	height: 100px
+	background-size: contain
+	margin: 10px auto
+
+.form__fieldset__text-content
+	font-size: 16px
