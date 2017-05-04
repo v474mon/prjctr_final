@@ -6,7 +6,6 @@ import React       from 'react'; // Necessary for JSX
 import ReactDOM    from 'react-dom';
 
 // Import our JS code
-import HelloWorld  from './components/hello-world';
 import FormProfile from './components/add-profile-form';
 import FormFood    from './components/add-food-form';
 import BottomBar   from './components/bottom-bar';
