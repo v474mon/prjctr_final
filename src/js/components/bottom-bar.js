@@ -1,8 +1,9 @@
 // Import React
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Create class called AppView that extends the base React Component class
-class BottomBar extends React.Component {
+class BottomBar extends Component {
   render() {
     return (
 				<div className="bottom-bar">
@@ -20,4 +21,9 @@ class BottomBar extends React.Component {
 }
 
 
-export default BottomBar;
+export default connect(
+	state => ({
+		testStore: state
+	}),
+	dispatch => ({})
+)(BottomBar);
