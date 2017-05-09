@@ -1,4 +1,4 @@
-const initialState = ['My home song', 'His work song'];
+const initialState = [];
 
 
 export default function tracks(state = initialState, action){
