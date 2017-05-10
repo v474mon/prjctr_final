@@ -7,8 +7,11 @@ import React         from 'react'; // Necessary for JSX
 import ReactDOM      from 'react-dom';
 import { Provider}   from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'
-import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { Router, Route, hashHistory} from 'react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
+//import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // Import our JS code
 /*
@@ -23,9 +26,16 @@ import TestComponent   from './components/test-component';
 
 
 import reducer from './reducers/index';
+import About from './About';
+
+
+import { createBrowserHistory } from 'history';
+//const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const history = syncHistoryWithStore(createBrowserHistory(), store);
+
 //const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
 //window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -77,7 +87,12 @@ ReactDOM.render(
 */
 ReactDOM.render(
 	<Provider store={store}>
-  		<TestComponent />
+		<Router history={hashHistory}>
+			<div>
+				<Route path="/" component={TestComponent} ></Route>
+				<Route path="/about" component={About} ></Route>
+			</div>
+		</Router>
 	</Provider>,
   document.getElementById('app-container')
 );

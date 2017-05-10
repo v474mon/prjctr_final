@@ -1,44 +1,48 @@
 // Import React
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
+import { getTracks } from '../actions/tracks';
+import Menu from './Menu';
+
 // Create class called AppView that extends the base React Component class
-class TestComponent extends Component {
-	addTrack(){
-		console.log('addTrack', this.trackInput.value);
-		this.props.onAddTrack(this.trackInput.value);
-		this.trackInput.value = '';
+const TestComponent = ({ tracks, onAddTrack, onFindTrack, onGetTracks }) => {
+	let trackInput = '';
+	let searchInput = '';
+	const addTrack = () => {
+		console.log('addTrack', trackInput.value);
+		onAddTrack(trackInput.value);
+		trackInput.value = '';
 	}
 
-	findTrack(){
-		console.log('findTrack', this.searchInput.value);
-		this.props.onFindTrack(this.searchInput.value);
+ const findTrack = () => {
+		console.log('findTrack', searchInput.value);
+		onFindTrack(searchInput.value);
 	}
 
-  render() {
-		console.log(this.props.tracks);
+
     return (
 			<div>
+				<Menu />
 				<div>
-					<input type="text" ref={(input) => {this.trackInput = input}} />
-					<button onClick={this.addTrack.bind(this)}>add Track</button>
+					<input type="text" ref={(input) => {trackInput = input}} />
+					<button onClick={addTrack}>add Track</button>
 				</div>
 				<div>
-					<input type="text" ref={(input) => {this.searchInput = input}} />
-					<button onClick={this.findTrack.bind(this)}>find Track</button>
+					<input type="text" ref={(input) => {searchInput = input}} />
+					<button onClick={findTrack}>find Track</button>
 				</div>
 				<div>
-					<button onClick={this.props.onGetTracks}>Get tracks</button>
+					<button onClick={onGetTracks}>Get tracks</button>
 				</div>
 				<ul>
-				{this.props.tracks.map((track, index ) =>
+				{tracks.map((track, index ) =>
 					<li key={index}>{track.name}</li>
 				)}
 				</ul>
 
 			</div>
     );
-  }
 }
 
 
@@ -59,15 +63,7 @@ export default connect(
 			dispatch({ type: 'FIND_TRACK', payload: name})
 		},
 		onGetTracks: (name) => {
-			const asyncGetTracks = () => {
-				return dispatch => {
-					setTimeout(() => {
-						console.log('I got tracks');
-						dispatch({ type: 'FETCH_TRACKS_SUCCESS', payload: [] })
-					}, 2000)
-				}
-			}
-			dispatch(asyncGetTracks())
+			dispatch(getTracks())
 		}
 	})
 )(TestComponent);
