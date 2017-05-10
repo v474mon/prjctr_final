@@ -22,11 +22,14 @@ import FoodList    from './components/food-list';
 import FoodDetail  from './components/food-detail';
 import AppHeader   from './components/app-header';
 */
-import TestComponent   from './components/test-component';
+//import TestComponent   from './components/test-component';
+import FoodList   from './components/FoodList';
+import FoodAddForm from './components/FoodAddForm';
 
 
 import reducer from './reducers/index';
 import About from './About';
+import Track from './components/Track';
 
 
 import { createBrowserHistory } from 'history';
@@ -34,19 +37,14 @@ import { createBrowserHistory } from 'history';
 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-const history = syncHistoryWithStore(createBrowserHistory(), store);
+//const history = syncHistoryWithStore(createBrowserHistory(), store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 //const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
 //window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 /*
-const foodList = [
-	{id: 1, name: 'Spicy Beef Khichuri', ordered: 2, sales: 2},
-	{id: 2, name: 'Biriyani', ordered: 4, sales: 15},
-	{id: 3, name: 'Spicy Beef Khichuri', ordered: 2, sales: 2},
-	{id: 4, name: 'Biriyani', ordered: 4, sales: 15}
-]
 
 let FormProfileAdd = (
 	<div>
@@ -87,10 +85,12 @@ ReactDOM.render(
 */
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={hashHistory}>
+		<Router history={history}>
 			<div>
-				<Route path="/" component={TestComponent} ></Route>
-				<Route path="/about" component={About} ></Route>
+				<Route path="/" component={FoodList} />
+				<Route path="/food-add" component={FoodAddForm} />
+				<Route path="/about" component={About} />
+				<Route path="/tracks/:id" component={Track} />
 			</div>
 		</Router>
 	</Provider>,

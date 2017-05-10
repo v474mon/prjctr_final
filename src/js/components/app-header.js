@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component} from 'react';
 
 // Create class called AppView that extends the base React Component class
 const AppHeader = (props) => {
