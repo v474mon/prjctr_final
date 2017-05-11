@@ -27,7 +27,7 @@ const FoodList = ({ foodList, ownProps }) => {
 
     return (
 			<div>
-				<AppHeader name="" icon="icon-food-list" />
+				<AppHeader name="Food I&rsquo;ve posted" icon="icon-food-list" />
 				<section className="app-body body_footer">
 					<ul className='cards__list'>
 						{foodList.map((item, index ) =>
@@ -51,6 +51,7 @@ const FoodList = ({ foodList, ownProps }) => {
 					</ul>
 
 				</section>
+				<Menu />
 				</div>
     );
 }
