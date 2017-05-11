@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 import Menu from './Menu';
 import AppHeader from './app-header';
+import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
 const ProfileAdd = ({ onAddProfile, ownProps }) => {
@@ -20,7 +21,8 @@ const ProfileAdd = ({ onAddProfile, ownProps }) => {
 
     return (
 			<div>
-				<section className="">
+				<AppHeader  />
+				<section className="app-body">
 					<div className=''>
 					<form className='form bg-white r form_bot-padding'>
 						<article className="form__header edit_profile_header">

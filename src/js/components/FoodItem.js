@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Menu from './Menu';
 import AppHeader from './app-header';
+import ChapterHeader from './chapter-header';
 
 const FoodItem = ({ item }) =>  {
 	return (
 		<div>
-			<AppHeader name="Food details" icon="icon-food-detail" />
+			<AppHeader />
 			<section className="app-body body_footer">
+				<ChapterHeader name="Food details" icon="icon-food-detail" />
 				<div className='form bg-white r form_bot-padding'>
 					<div className=''>
 						<article className="form__fieldset">

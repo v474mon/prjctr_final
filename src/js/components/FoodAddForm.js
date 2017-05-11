@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 import Menu from './Menu';
 import AppHeader from './app-header';
+import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
 const FoodAddForm = ({ onAddFood, ownProps }) => {
@@ -20,8 +21,9 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 
     return (
 			<div>
-				<AppHeader name="" icon="icon-food-list" />
+				<AppHeader  />
 				<section className="app-body">
+					<ChapterHeader name="" icon="icon-food-list" />
 					<div className=''>
 						<form className='form bg-white r form_bot-padding'>
 

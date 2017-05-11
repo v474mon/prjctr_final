@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 import Menu from './Menu';
 import AppHeader from './app-header';
+import ChapterHeader from './chapter-header';
 
 
 // Create class called AppView that extends the base React Component class
@@ -27,8 +28,9 @@ const FoodList = ({ foodList, ownProps }) => {
 
     return (
 			<div>
-				<AppHeader name="Food I&rsquo;ve posted" icon="icon-food-list" />
+				<AppHeader/>
 				<section className="app-body body_footer">
+					<ChapterHeader name="Food I&rsquo;ve posted" icon="icon-food-list" />
 					<ul className='cards__list'>
 						{foodList.map((item, index ) =>
 							<li key={index}>
