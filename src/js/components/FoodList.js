@@ -14,6 +14,7 @@ const FoodList = ({ foodList, ownProps }) => {
 	let trackInput = '';
 	let searchInput = '';
 	console.log('foodList', foodList)
+	/*
 	const addTrack = () => {
 		console.log('addTrack', trackInput.value);
 		onAddTrack(trackInput.value);
@@ -24,7 +25,7 @@ const FoodList = ({ foodList, ownProps }) => {
 		console.log('findTrack', searchInput.value);
 		onFindTrack(searchInput.value);
 	}
-
+*/
 
     return (
 			<div>

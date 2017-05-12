@@ -8,14 +8,28 @@ import AppHeader from './app-header';
 import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
-const ProfileAdd = ({ onAddProfile, ownProps }) => {
-	console.log('ownProps', ownProps)
-	let trackInput = '';
-	let searchInput = '';
-	const addFood = () => {
-		console.log('addProfile', trackInput.value);
-		onAddFood(trackInput.value);
-		trackInput.value = '';
+const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
+	console.log('profile', profile)
+	let new_profile = {}
+	let nameInput = '';
+	let locationInput = '';
+	let emailInput = '';
+	let usernameInput = '';
+	let phoneInput = '';
+	let oldPasswordInput = '';
+	let newPasswordInput = '';
+
+	const addProfile = ( {profile} ) => {
+		new_profile.name = nameInput.value;
+		new_profile.location = locationInput.value;
+		new_profile.email = emailInput.value;
+		new_profile.username = usernameInput.value;
+		new_profile.phone = phoneInput.value;
+		new_profile.oldPassword = oldPasswordInput.value;
+		new_profile.newPassword = newPasswordInput.value;
+		console.log('new_profile')
+		console.log(new_profile)
+		onAddProfile(new_profile);
 	}
 
 
@@ -33,20 +47,21 @@ const ProfileAdd = ({ onAddProfile, ownProps }) => {
 							<div className="form__fieldset__title">
 								<span className="icon icon-user"></span> About
 							</div>
+							<h2>{profile.name}</h2>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Name" className="form-control" />
+								<input type="text" placeholder="Name" className="form-control" type="text" ref={(input) => {nameInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Location" className="form-control" />
+								<input type="text" placeholder="Location" className="form-control" ref={(input) => {locationInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="email" placeholder="Email" className="form-control" />
+								<input type="email" placeholder="Email" className="form-control" ref={(input) => {emailInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Username" className="form-control" />
+								<input type="text" placeholder="Username" className="form-control" ref={(input) => {usernameInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Phone Number" className="form-control" />
+								<input type="text" placeholder="Phone Number" className="form-control" ref={(input) => {phoneInput = input}} />
 							</div>
 						</fieldset>
 						<fieldset className="form__fieldset">
@@ -54,13 +69,13 @@ const ProfileAdd = ({ onAddProfile, ownProps }) => {
 								<span className="icon icon-key"></span> Change Password
 							</div>
 							<div className="form__fieldset__field">
-								<input type="password" placeholder="Old Password"  className="form-control" />
+								<input type="password" placeholder="Old Password"  className="form-control" ref={(input) => {oldPasswordInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="password" placeholder="New Password"  className="form-control" />
+								<input type="password" placeholder="New Password"  className="form-control" ref={(input) => {newPasswordInput = input}} />
 							</div>
 						</fieldset>
-						<div className="form__submit">Submit</div>
+						<button className="form__submit" onClick={addProfile} type="button">Submit</button>
 					</form>
 					</div>
 				</section>
@@ -68,28 +83,25 @@ const ProfileAdd = ({ onAddProfile, ownProps }) => {
     );
 }
 
-
 export default connect(
 	(state, ownProps) => ({
 		//tracks: state.tracks.filter(track => track.name.includes(state.filterTracks)),
-		ownProps
+		ownProps,
+		profile: state.profile
 	}),
 	dispatch => ({
-		onAddProfile: (name) => {
+		onAddProfile: (new_profile) => {
 			const payload = {
-				id: Date.now().toString(),
-				name
+				name: new_profile.name,
+				location:  new_profile.location,
+				email: new_profile.email,
+				username: new_profile.username,
+				phone: new_profile.phone,
+				oldPassword: new_profile.oldPassword,
+			  newPassword: new_profile.newPassword
 			};
 			dispatch({ type: 'ADD_PROFILE', payload})
 		}
 	})
+
 )(ProfileAdd);
-
-/*
-<h1>FORMS</h1>
-<div>
-	<input type="text" ref={(input) => {trackInput = input}} />
-	<button onClick={addFood}>add Track</button>
-</div>
-
-*/
