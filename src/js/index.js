@@ -15,6 +15,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import FoodList   from './components/FoodList';
 import FoodAddForm from './components/FoodAddForm';
 import ProfileAdd from './components/ProfileAdd';
+import LoginForm from './components/LoginForm';
 
 import reducer from './reducers/index';
 import About from './components/About';
@@ -30,7 +31,8 @@ ReactDOM.render(
 	<Provider store={store}>
 		<Router history={history}>
 			<div>
-				<Route path="/" component={FoodList} />
+				<Route path="/" component={LoginForm} />
+				<Route path="/food-list" component={FoodList} />
 				<Route path="/food-add" component={FoodAddForm} />
 				<Route path="/profile-add" component={ProfileAdd} />
 				<Route path="/about" component={About} />

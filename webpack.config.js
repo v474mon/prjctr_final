@@ -62,5 +62,8 @@ module.exports = {
 			{test: /\.ttf$/,  loader: "url?limit=10000&mimetype=application/octet-stream" },
       {test: /\.eot$/,  loader: "file" }
     ]
+  },
+	devServer: {
+    historyApiFallback: true,
   }
 };

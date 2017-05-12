@@ -1,3 +1,5 @@
+const initialState = {};
+/*
 const initialState = {
 	name: '',
 	location: '',
@@ -6,13 +8,12 @@ const initialState = {
 	oldPassword: '',
 	newPassword: ''
 };
+*/
 
 export default function profile (state = initialState, action){
 	if(action.type === 'ADD_PROFILE'){
-		return [
-			...state,
-			action.payload
-		];
+			state = action.payload
+		return state
 	}
 	return state;
 }

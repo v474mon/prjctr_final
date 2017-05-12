@@ -13,7 +13,9 @@ const FoodList = ({ foodList, ownProps }) => {
 	console.log('ownProps', ownProps)
 	let trackInput = '';
 	let searchInput = '';
+	let zeroList = '';
 	console.log('foodList', foodList)
+
 	/*
 	const addTrack = () => {
 		console.log('addTrack', trackInput.value);
@@ -36,7 +38,7 @@ const FoodList = ({ foodList, ownProps }) => {
 						{foodList.map((item, index ) =>
 							<li key={index}>
 								<Link className="cards__item"  to={`/food-list/${item.id}`}>
-									<img src="src/img/food1.jpg" alt="" className="cards__item__img" />
+									<img src={`src/img/${item.img}`} alt="" className="cards__item__img" />
 									<div className="cards__item__cover">
 										<div className="cards__item__cover__title">
 											{item.name}
@@ -52,7 +54,9 @@ const FoodList = ({ foodList, ownProps }) => {
 							</li>
 						)}
 					</ul>
-
+					{foodList.length == 0 > 0 &&
+		        <p>Вы еще не добавили ни одно блюдо</p>
+      		}
 				</section>
 				<Menu />
 				</div>
@@ -76,7 +80,8 @@ export default connect(
 	//	foodList: state.foodList.filter(item => item.name.includes(state.filterList)),
 		foodList: state.foodList,
 		ownProps
-	}),
+	})
+	/*,
 	dispatch => ({
 		onAddTrack: (name) => {
 			const payload = {
@@ -90,6 +95,7 @@ export default connect(
 			dispatch({ type: 'FIND_TRACK', payload: name})
 		}
 	})
+	*/
 )(FoodList);
 
 /*

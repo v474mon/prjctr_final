@@ -27,7 +27,7 @@ const FoodItem = ({ item }) =>  {
 								<span className="icon icon-camera"></span> Photos
 							</div>
 							<div className="form__fieldset__field">
-								<img src="src/img/food1.jpg" alt="" className="cards__item__img" />
+								<img src={`src/img/${item.img}`} alt={item.name} className="cards__item__img" />
 							</div>
 						</article>
 					</div>

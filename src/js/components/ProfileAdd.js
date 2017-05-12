@@ -18,8 +18,10 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 	let phoneInput = '';
 	let oldPasswordInput = '';
 	let newPasswordInput = '';
+	let id = profile.id ? profile.id : parseInt(Date.now().toString());
 
 	const addProfile = ( {profile} ) => {
+		new_profile.id = id;
 		new_profile.name = nameInput.value;
 		new_profile.location = locationInput.value;
 		new_profile.email = emailInput.value;
@@ -47,21 +49,20 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 							<div className="form__fieldset__title">
 								<span className="icon icon-user"></span> About
 							</div>
-							<h2>{profile.name}</h2>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Name" className="form-control" type="text" ref={(input) => {nameInput = input}}  />
+								<input type="text" placeholder="Name" value={profile.name} className="form-control" type="text" ref={(input) => {nameInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Location" className="form-control" ref={(input) => {locationInput = input}} />
+								<input type="text" placeholder="Location" value={profile.location} className="form-control" ref={(input) => {locationInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="email" placeholder="Email" className="form-control" ref={(input) => {emailInput = input}}  />
+								<input type="email" placeholder="Email" value={profile.email} className="form-control" ref={(input) => {emailInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Username" className="form-control" ref={(input) => {usernameInput = input}} />
+								<input type="text" placeholder="Username" value={profile.username} className="form-control" ref={(input) => {usernameInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Phone Number" className="form-control" ref={(input) => {phoneInput = input}} />
+								<input type="text" placeholder="Phone Number" value={profile.phone} className="form-control" ref={(input) => {phoneInput = input}} />
 							</div>
 						</fieldset>
 						<fieldset className="form__fieldset">
@@ -92,6 +93,7 @@ export default connect(
 	dispatch => ({
 		onAddProfile: (new_profile) => {
 			const payload = {
+				id: new_profile.id,
 				name: new_profile.name,
 				location:  new_profile.location,
 				email: new_profile.email,
@@ -100,7 +102,8 @@ export default connect(
 				oldPassword: new_profile.oldPassword,
 			  newPassword: new_profile.newPassword
 			};
-			dispatch({ type: 'ADD_PROFILE', payload})
+			dispatch({ type: 'ADD_PROFILE', payload});
+			window.location.href ='#/food-list';
 		}
 	})
 

@@ -113,8 +113,10 @@ export default connect(
 	}),
 	dispatch => ({
 		onAddFood: (new_food_item) => {
+
 			const payload = {
 				id: parseInt(Date.now().toString()),
+				img: "food"+Math.floor(Math.random()*12+1)+".jpg",
 				name: new_food_item.name,
 				ingredient:  new_food_item.ingredient,
 				price: new_food_item.price,
@@ -123,6 +125,7 @@ export default connect(
 				sales: 0
 			};
 			dispatch({ type: 'ADD_FOOD', payload})
+			window.location.href ='#/food-list';
 		}
 	})
 )(FoodAddForm);

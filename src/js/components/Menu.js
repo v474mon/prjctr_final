@@ -7,9 +7,9 @@ class Menu extends Component {
 			<div className="bottom-bar">
 				<div className="row">
 					<div className="col-md-12">
-						<Link to="/" className="bottom-bar__link">
+						<Link to="/food-list" className="bottom-bar__link">
 							<span className="bottom-bar__link__icon"></span>
-							<span className="bottom-bar__link__text">Post Food</span>
+							<span className="bottom-bar__link__text">Food List</span>
 						</Link>
 						<Link to="/food-add" className="bottom-bar__link">
 							<span className="bottom-bar__link__icon"></span>
