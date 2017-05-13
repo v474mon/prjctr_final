@@ -21,18 +21,22 @@ const LoginForm = ({ onLogin, ownProps }) => {
 
     return (
 			<div>
-				<section className="app-body">
+				<section className="app-body app-body_login">
 					<div className=''>
-					<form className='form bg-white r form_bot-padding'>
+					<form className='form'>
 						<fieldset className="form__fieldset">
-							<div className="form__fieldset__field">
-								<input type="text" placeholder="Login" className="form-control" type="text" ref={(input) => {loginInput = input}}  />
+							<div className="login_input_wrap r">
+								<input type="text" placeholder="Login" className="form-control form-control-login" type="text" ref={(input) => {loginInput = input}}  />
+								<span className="icon form__login__icon icon-login"></span>
 							</div>
-							<div className="form__fieldset__field">
-								<input type="password" placeholder="Password"  className="form-control" ref={(input) => {passwordInput = input}} />
+							<div className="login_input_wrap r">
+								<input type="password" placeholder="Password"  className="form-control form-control-login" ref={(input) => {passwordInput = input}} />
+									<span className="icon form__login__icon icon-password"></span>
 							</div>
 						</fieldset>
-						<button className="form__submit" onClick={LoginFunc} type="button">Submit</button>
+						<div className="text-center">
+							<button className="login_form__submit" onClick={LoginFunc} type="button">Submit</button>
+						</div>
 					</form>
 					</div>
 				</section>

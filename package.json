@@ -1,6 +1,6 @@
 {
-  "name": "react-jsx-es6-babel6-sass-images-boilerplate",
-  "version": "1.0.0",
+  "name": "Prjctr final app",
+  "version": "0.0.6",
   "description": "React apps in ES6/JSX/SASS and built using webpack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

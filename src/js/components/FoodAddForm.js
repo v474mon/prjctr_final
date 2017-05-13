@@ -34,7 +34,7 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 			<div>
 				<AppHeader  />
 				<section className="app-body">
-					<ChapterHeader name="" icon="icon-food-list" />
+					<ChapterHeader name="Add new food" icon="icon-food-list" />
 					<div className=''>
 						<form
 							className='form bg-white r form_bot-padding'

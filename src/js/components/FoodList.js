@@ -34,29 +34,31 @@ const FoodList = ({ foodList, ownProps }) => {
 				<AppHeader/>
 				<section className="app-body body_footer">
 					<ChapterHeader name="Food I&rsquo;ve posted" icon="icon-food-list" />
-					<ul className='cards__list'>
-						{foodList.map((item, index ) =>
-							<li key={index}>
-								<Link className="cards__item"  to={`/food-list/${item.id}`}>
-									<img src={`src/img/${item.img}`} alt="" className="cards__item__img" />
-									<div className="cards__item__cover">
-										<div className="cards__item__cover__title">
-											{item.name}
+					<div className="container">
+						<ul className='cards__list'>
+							{foodList.map((item, index ) =>
+								<li key={index}>
+									<Link className="cards__item"  to={`/food-list/${item.id}`}>
+										<img src={`src/img/${item.img}`} alt="" className="cards__item__img" />
+										<div className="cards__item__cover">
+											<div className="cards__item__cover__title">
+												{item.name}
+											</div>
+											<div className="cards__item__cover__title_num">
+												{item.ordered} Pending ordered<br/>
+											</div>
+											<div className="cards__item__cover__title_num italic">
+												{item.sales} Total Sales
+											</div>
 										</div>
-										<div className="cards__item__cover__title_num">
-											{item.ordered} Pending ordered<br/>
-										</div>
-										<div className="cards__item__cover__title_num italic">
-											{item.sales} Total Sales
-										</div>
-									</div>
-								</Link>
-							</li>
-						)}
-					</ul>
-					{foodList.length == 0 > 0 &&
-		        <p>Вы еще не добавили ни одно блюдо</p>
-      		}
+									</Link>
+								</li>
+							)}
+						</ul>
+						{foodList.length == 0 > 0 &&
+			        <p>No food added yet</p>
+	      		}
+					</div>
 				</section>
 				<Menu />
 				</div>

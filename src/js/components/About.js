@@ -9,8 +9,8 @@ class About extends Component {
 			<div>
 				<AppHeader  />
 				<section className="app-body body_footer">
-					<ChapterHeader name="About app" icon="icon-food-about" />
-					<div>This is our cool music app</div>
+					<ChapterHeader name="About app" icon="icon-about" />
+					<div className="container">This is our cool music app</div>
 				</section>
 				<Menu />
 			</div>
