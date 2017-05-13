@@ -10,12 +10,6 @@ import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
 const FoodList = ({ foodList, ownProps }) => {
-	console.log('ownProps', ownProps)
-	let trackInput = '';
-	let searchInput = '';
-	let zeroList = '';
-	console.log('foodList', foodList)
-
 	/*
 	const addTrack = () => {
 		console.log('addTrack', trackInput.value);

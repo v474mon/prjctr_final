@@ -4,7 +4,11 @@ import Menu from './Menu';
 import AppHeader from './app-header';
 import ChapterHeader from './chapter-header';
 
-const FoodItem = ({ item }) =>  {
+const FoodItem = ({ item, onViewFood, onOrderFood }) =>  {
+	onViewFood(item.id);
+	const orderNow = () => {
+		onOrderFood(item.id);
+	}
 	return (
 		<div>
 			<AppHeader />
@@ -80,17 +84,36 @@ const FoodItem = ({ item }) =>  {
 							</article>
 						</section>
 					</div>
+					<button className="form__submit" onClick={orderNow} type="button">Order now</button>
 				</div>
 			</section>
 			<Menu />
 		</div>
 	)};
 
-const mapStateToProps = (state, ownProps) => {
-	console.log(ownProps);
-	return {
-		item: state.foodList.find(item => item.id === Number(ownProps.params.id))
-	}
-};
 
-export default connect(mapStateToProps)(FoodItem);
+export default connect(
+		(state, ownProps) => ({
+			ownProps,
+			item: state.foodList.find(item => item.id === Number(ownProps.params.id))
+		}),
+		dispatch => ({
+			onOrderFood: (id) => {
+				console.log('id', id);
+				//dispatch({ type: 'FIND_TRACK', payload: id})
+			},
+			onViewFood: (id) => {
+				console.log('id', id);
+			}
+		})
+)(FoodItem);
+
+
+
+
+/*
+,
+
+
+
+*/

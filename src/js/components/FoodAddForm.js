@@ -119,7 +119,6 @@ export default connect(
 	}),
 	dispatch => ({
 		onAddFood: (new_food_item) => {
-
 			const payload = {
 				id: parseInt(Date.now().toString()),
 				img: "food"+Math.floor(Math.random()*12+1)+".jpg",
@@ -130,7 +129,7 @@ export default connect(
 				supplierName: new_food_item.supplierName,
 				supplierLocation: new_food_item.supplierLocation,
 				supplierPhone: new_food_item.supplierPhone,
-				ordered: 0,
+				views: 0,
 				sales: 0
 			};
 			dispatch({ type: 'ADD_FOOD', payload})
