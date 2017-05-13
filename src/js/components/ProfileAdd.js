@@ -9,7 +9,6 @@ import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
 const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
-	console.log('profile', profile)
 	let new_profile = {}
 	let nameInput = '';
 	let locationInput = '';
@@ -19,6 +18,7 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 	let oldPasswordInput = '';
 	let newPasswordInput = '';
 	let id = profile.id ? profile.id : parseInt(Date.now().toString());
+	console.log('profile', profile)
 
 	const addProfile = ( {profile} ) => {
 		new_profile.id = id;
@@ -29,8 +29,6 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 		new_profile.phone = phoneInput.value;
 		new_profile.oldPassword = oldPasswordInput.value;
 		new_profile.newPassword = newPasswordInput.value;
-		console.log('new_profile')
-		console.log(new_profile)
 		onAddProfile(new_profile);
 	}
 
@@ -50,19 +48,19 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 								<span className="icon icon-user"></span> About
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Name" value={profile.name} className="form-control" type="text" ref={(input) => {nameInput = input}}  />
+								<input type="text" placeholder="Name" defaultValue={profile.name} className="form-control" type="text" ref={(input) => {nameInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Location" value={profile.location} className="form-control" ref={(input) => {locationInput = input}} />
+								<input type="text" placeholder="Location" defaultValue={profile.location} className="form-control" ref={(input) => {locationInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="email" placeholder="Email" value={profile.email} className="form-control" ref={(input) => {emailInput = input}}  />
+								<input type="email" placeholder="Email" defaultValue={profile.email} className="form-control" ref={(input) => {emailInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Username" value={profile.username} className="form-control" ref={(input) => {usernameInput = input}} />
+								<input type="text" placeholder="Username" defaultValue={profile.username} className="form-control" ref={(input) => {usernameInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Phone Number" value={profile.phone} className="form-control" ref={(input) => {phoneInput = input}} />
+								<input type="text" placeholder="Phone Number" defaultValue={profile.phone} className="form-control" ref={(input) => {phoneInput = input}} />
 							</div>
 						</fieldset>
 						<fieldset className="form__fieldset">

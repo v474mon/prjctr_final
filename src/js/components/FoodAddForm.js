@@ -16,6 +16,9 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 	let ingredientsInput = '';
 	let priceInput = '';
 	let perPersonInput = '';
+	let supplierNameInput = '';
+	let supplierLocationInput = '';
+	let supplierPhoneInput = '';
 	const addFood = () => {
 		//console.log('addFood', trackInput.value);
 		//onAddFood(trackInput.value);
@@ -23,6 +26,9 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 		new_food_item.ingredient = ingredientsInput.value;
 		new_food_item.price = priceInput.value;
 		new_food_item.perPerson = perPersonInput.value;
+		new_food_item.supplierName = supplierNameInput.value;
+		new_food_item.supplierLocation = supplierLocationInput.value;
+		new_food_item.supplierPhone = supplierPhoneInput.value;
 		console.log('new_food_item')
 		console.log(new_food_item)
 		//trackInput.value = '';
@@ -81,13 +87,13 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 									<span className="icon icon-supplier"></span> Supplier Info
 								</div>
 								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Name" className="form-control" />
+									<input type="text" placeholder="Supplier Name" className="form-control" ref={(input) => {supplierNameInput = input}}  />
 								</div>
 								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Location" className="form-control" />
+									<input type="text" placeholder="Supplier Location" className="form-control" ref={(input) => {supplierLocationInput = input}}  />
 								</div>
 								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Contant info" className="form-control" />
+									<input type="text" placeholder="Supplier Phone" className="form-control" ref={(input) => {supplierPhoneInput = input}}  />
 								</div>
 							</fieldset>
 
@@ -121,6 +127,9 @@ export default connect(
 				ingredient:  new_food_item.ingredient,
 				price: new_food_item.price,
 				perPerson: new_food_item.perPerson,
+				supplierName: new_food_item.supplierName,
+				supplierLocation: new_food_item.supplierLocation,
+				supplierPhone: new_food_item.supplierPhone,
 				ordered: 0,
 				sales: 0
 			};

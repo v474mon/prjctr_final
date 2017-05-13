@@ -1,5 +1,4 @@
 // Import CSS
-
 import '../css/index.sass';
 
 // Import React and ReactDOM
