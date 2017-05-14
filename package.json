@@ -1,12 +1,12 @@
 {
-  "name": "Projector final project",
+  "name": "Projector",
   "version": "0.0.6",
   "description": "React apps in ES6/JSX/SASS and built using webpack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-server": "webpack-dev-server --hot --progress --colors",
     "web-server": "http-server -p 3000 .",
-    "start": "webpack -p & npm run web-server"
+    "start": "npm run webpack-server & npm run web-server"
   },
   "keywords": [
     "demo"
