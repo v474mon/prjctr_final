@@ -51,7 +51,7 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 								</div>
 								<div className="form__fieldset__field">
 									<div className="container">
-										<input type="text" placeholder="Ingredients" className="form-control" ref={(input) => {ingredientsInput = input}}  />
+										<textarea type="text" placeholder="Ingredients" className="form-control" ref={(input) => {ingredientsInput = input}} ></textarea>
 									</div>
 								</div>
 								<div className="form__fieldset__field">
@@ -76,7 +76,10 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 								</div>
 								<div className="form__fieldset__field">
 									<div className="text-center">
-										<p>Take or Upload Photos of the food</p>
+										<p className="text-small">
+											Unfortunately, in this version it&rsquo;s impossible to upload photo.
+											Random picture would be placed automatically.
+										</p>
 										<div className="form__btn__take-photo"></div>
 									</div>
 								</div>
