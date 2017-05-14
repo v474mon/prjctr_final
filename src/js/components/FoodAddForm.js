@@ -10,7 +10,6 @@ import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
 const FoodAddForm = ({ onAddFood, ownProps }) => {
-	console.log('ownProps', ownProps)
 	let new_food_item = {}
 	let nameInput = '';
 	let ingredientsInput = '';
@@ -29,9 +28,7 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 		new_food_item.supplierName = supplierNameInput.value;
 		new_food_item.supplierLocation = supplierLocationInput.value;
 		new_food_item.supplierPhone = supplierPhoneInput.value;
-		console.log('new_food_item')
-		console.log(new_food_item)
-		//trackInput.value = '';
+
 		onAddFood(new_food_item);
 	}
 

@@ -8,7 +8,12 @@ import AppHeader from './app-header';
 import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
-const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
+const ProfileAdd = (props)  => {
+	//const { profile, onAddProfile } = props.profile;
+const { profile, onAddProfile} = props;
+console.log('onAddProfile')
+console.log(onAddProfile)
+//const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 	let new_profile = {}
 	let nameInput = '';
 	let locationInput = '';
@@ -20,7 +25,7 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 	let id = profile.id ? profile.id : parseInt(Date.now().toString());
 	console.log('profile', profile)
 
-	const addProfile = ( {profile} ) => {
+	const addProfile = (event) => {
 		new_profile.id = id;
 		new_profile.name = nameInput.value;
 		new_profile.location = locationInput.value;
@@ -29,8 +34,11 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 		new_profile.phone = phoneInput.value;
 		new_profile.oldPassword = oldPasswordInput.value;
 		new_profile.newPassword = newPasswordInput.value;
+		console.log('new_profile - ProfileADD')
+		console.log(new_profile)
 		onAddProfile(new_profile);
-	}
+
+	};
 
 
     return (
@@ -48,30 +56,19 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 								<span className="icon icon-user"></span> About
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Name" defaultValue={profile.name} className="form-control" type="text" ref={(input) => {nameInput = input}}  />
+								<input type="text" placeholder="Name" defaultValue={profile.get('name')} className="form-control" type="text" ref={(input) => {nameInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Location" defaultValue={profile.location} className="form-control" ref={(input) => {locationInput = input}} />
+								<input type="text" placeholder="Location" defaultValue={profile.get('location')} className="form-control" ref={(input) => {locationInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="email" placeholder="Email" defaultValue={profile.email} className="form-control" ref={(input) => {emailInput = input}}  />
+								<input type="email" placeholder="Email" defaultValue={profile.get('email')} className="form-control" ref={(input) => {emailInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Username" defaultValue={profile.username} className="form-control" ref={(input) => {usernameInput = input}} />
+								<input type="text" placeholder="Username" defaultValue={profile.get('username')} className="form-control" ref={(input) => {usernameInput = input}} />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Phone Number" defaultValue={profile.phone} className="form-control" ref={(input) => {phoneInput = input}} />
-							</div>
-						</fieldset>
-						<fieldset className="form__fieldset">
-							<div className="form__fieldset__title">
-								<span className="icon icon-key"></span> Change Password
-							</div>
-							<div className="form__fieldset__field">
-								<input type="password" placeholder="Old Password"  className="form-control" ref={(input) => {oldPasswordInput = input}} />
-							</div>
-							<div className="form__fieldset__field">
-								<input type="password" placeholder="New Password"  className="form-control" ref={(input) => {newPasswordInput = input}} />
+								<input type="text" placeholder="Phone Number" defaultValue={profile.get('phone')} className="form-control" ref={(input) => {phoneInput = input}} />
 							</div>
 						</fieldset>
 						<button className="form__submit" onClick={addProfile} type="button">Submit</button>
@@ -81,7 +78,9 @@ const ProfileAdd = ({ onAddProfile, ownProps, profile }) => {
 			</div>
     );
 }
+export default ProfileAdd;
 
+/*
 export default connect(
 	(state, ownProps) => ({
 		//tracks: state.tracks.filter(track => track.name.includes(state.filterTracks)),
@@ -106,3 +105,4 @@ export default connect(
 	})
 
 )(ProfileAdd);
+*/

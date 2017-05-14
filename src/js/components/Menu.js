@@ -31,11 +31,3 @@ class Menu extends Component {
 }
 
 export default Menu;
-
-
-/*
-<div>
-	<Link to="/">Tracks</Link>
-	<Link to="/about">About</Link>
-</div>
-*/

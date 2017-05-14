@@ -11,17 +11,14 @@ import thunk from 'redux-thunk';
 import { Router, Route, hashHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 
-import FoodList   from './components/FoodList';
-import FoodAddForm from './components/FoodAddForm';
-import ProfileAdd from './components/ProfileAdd';
-import LoginForm from './components/LoginForm';
 
+import FoodAddForm from './components/FoodAddForm';
+import LoginForm from './components/LoginForm';
 import reducer from './reducers/index';
 import About from './components/About';
-import Track from './components/Track';
-import FoodItem from './components/FoodItem';
 
 import { createBrowserHistory } from 'history';
+import { FoodListContainer, FoodItemContainer, ProfileAddContainer } from './containers';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 const history = syncHistoryWithStore(hashHistory, store);
@@ -31,12 +28,11 @@ ReactDOM.render(
 		<Router history={history}>
 			<div>
 				<Route path="/" component={LoginForm} />
-				<Route path="/food-list" component={FoodList} />
+				<Route path="/food-list" component={FoodListContainer} />
 				<Route path="/food-add" component={FoodAddForm} />
-				<Route path="/profile-add" component={ProfileAdd} />
+				<Route path="/food-list/:id" component={FoodItemContainer} />
+				<Route path="/profile-add" component={ProfileAddContainer} />
 				<Route path="/about" component={About} />
-				<Route path="/tracks/:id" component={Track} />
-				<Route path="/food-list/:id" component={FoodItem} />
 			</div>
 		</Router>
 	</Provider>,

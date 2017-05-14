@@ -1,15 +1,28 @@
-import { loadState, saveState } from '../components/localStorage';
+import { Immutable, List, Map } from 'immutable';
+import { fromJS, toJS } from 'immutable';
+import { loadState, saveState } from '../helpers/localStorage';
 
-//const initialState = loadState();
 const serializedState = loadState('profile');
 var initialState = serializedState ? serializedState : {};
+const imm_profile = fromJS(initialState);
 
-
-export default function profile (state = initialState, action){
+const init = Map({});
+export default function(profile=imm_profile, action) {
 	if(action.type === 'ADD_PROFILE'){
-			state = action.payload;
-			saveState('profile', state);
-		return state
+		console.log('ADD_PROFILE action.payload');
+		console.log(action.payload)
+		const prof = action.payload;
+		const prof_obj = profile
+			.set('id', prof.id)
+			.set('name', prof.name)
+			.set('location', prof.location)
+			.set('email', prof.email)
+			.set('phone', prof.phone)
+			.set('username', prof.username)
+			.set('newPassword', prof.newPassword)
+			.set('oldPassword', prof.oldPassword);
+		saveState('profile', prof_obj.toJS());
+		return prof_obj;
 	}
-	return state;
+	return profile;
 }
