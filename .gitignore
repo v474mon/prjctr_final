@@ -3,12 +3,10 @@
 
 node_modules
 
-dist
 coverage
 
 .idea/
 *.lock
 
-bemto/
 sftp-config.json
 .htaccess
