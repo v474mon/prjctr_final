@@ -71,38 +71,13 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 							<fieldset className="form__fieldset">
 								<div className="form__fieldset__title">
 									<div className="container">
-										<span className="icon icon-camera"></span> Photos
+										<span className="icon icon-camera"></span> Photo
 									</div>
 								</div>
 								<div className="form__fieldset__field">
 									<div className="text-center">
 										<p>Take or Upload Photos of the food</p>
 										<div className="form__btn__take-photo"></div>
-									</div>
-								</div>
-							</fieldset>
-
-							<fieldset className="form__fieldset">
-								<div className="form__fieldset__title">
-									<div className="container">
-										<span className="icon icon-supplier"></span> Supplier Info
-									</div>
-								</div>
-								<div className="">
-									<div className="form__fieldset__field">
-										<div className="container">
-											<input type="text" placeholder="Supplier Name" className="form-control" ref={(input) => {supplierNameInput = input}}  />
-										</div>
-									</div>
-									<div className="form__fieldset__field">
-										<div className="container">
-											<input type="text" placeholder="Supplier Location" className="form-control" ref={(input) => {supplierLocationInput = input}}  />
-										</div>
-									</div>
-									<div className="form__fieldset__field">
-										<div className="container">
-											<input type="text" placeholder="Supplier Phone" className="form-control" ref={(input) => {supplierPhoneInput = input}}  />
-										</div>
 									</div>
 								</div>
 							</fieldset>
@@ -128,12 +103,7 @@ export default connect(
 				name: new_food_item.name,
 				ingredient:  new_food_item.ingredient,
 				price: new_food_item.price,
-				perPerson: new_food_item.perPerson,
-				supplierName: new_food_item.supplierName,
-				supplierLocation: new_food_item.supplierLocation,
-				supplierPhone: new_food_item.supplierPhone,
-				views: 0,
-				sales: 0
+				perPerson: new_food_item.perPerson
 			};
 			dispatch({ type: 'ADD_FOOD', payload})
 			window.location.href ='#/food-list';

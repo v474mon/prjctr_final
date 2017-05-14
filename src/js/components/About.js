@@ -10,7 +10,18 @@ class About extends Component {
 				<AppHeader  />
 				<section className="app-body body_footer">
 					<ChapterHeader name="About app" icon="icon-about" />
-					<div className="container">This is our cool music app</div>
+					<div className="container">
+						<section>
+							<h2>Projector final project</h2>
+							<p>Application allows modify personal information (Profile) and add Food into Food List.</p>
+						</section>
+						<section>
+							<h3>Technologies</h3>
+							<p>App made on ReactJs/ Redux/ ImmutableJs stack</p>
+							<p>HTML markup on BEM and SaaS-preprocessor</p>
+						</section>
+
+					</div>
 				</section>
 				<Menu />
 			</div>
