@@ -1,5 +1,5 @@
 {
-  "name": "hjhj",
+  "name": "Projector final projector",
   "version": "0.0.6",
   "description": "React apps in ES6/JSX/SASS and built using webpack",
   "scripts": {
@@ -11,7 +11,7 @@
   "keywords": [
     "demo"
   ],
-  "author": "Qianxueseng",
+  "author": "v474mon@gmail.com",
   "devDependencies": {
     "babel-core": "^6.3.21",
     "babel-loader": "^6.2.0",

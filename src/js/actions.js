@@ -1,19 +1,5 @@
-/*
-export function addTodo(text) {
-	return {
-		type: 'ADD_TODO',
-		payload: {
-			id: v4(),
-			isDone: false,
-			text: text
-		}
-	};
-}
-*/
-
 export function onAddProfile(new_profile) {
-	console.log('onAddProfile - new_profile')
-	console.log(new_profile)
+	window.location.href ='#/food-list';
 	return {
 		type: 'ADD_PROFILE',
 		payload: {
@@ -28,6 +14,3 @@ export function onAddProfile(new_profile) {
 		}
 	};
 }
-
-
-// window.location.href ='#/food-list';

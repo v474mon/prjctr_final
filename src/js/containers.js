@@ -22,6 +22,7 @@ export const FoodListContainer = connect(
 export const FoodItemContainer = connect(
 	function mapStateToProps(state, ownProps) {
 		const food_list = state.foodList;
+		const supplier = state.profile;
 		const id = Number(ownProps.params.id);
 		const item = {};
 		let food_item = {};
@@ -43,10 +44,9 @@ export const FoodItemContainer = connect(
 					};
 				}
 			})
-		console.log('!!item')
-		console.log(food_item)
 		return{
 			foodItem: food_item,
+			supplier: supplier
 		} ;
 	},
 
@@ -66,8 +66,6 @@ export const FoodItemContainer = connect(
 
 export const ProfileAddContainer = connect(
 	function mapStateToProps(state) {
-		console.log('state.profile in containers')
-		console.log(state.profile)
 		return { profile: state.profile };
 	},
 	function mapDispatchToProps(dispatch) {

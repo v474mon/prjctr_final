@@ -19,8 +19,6 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 	let supplierLocationInput = '';
 	let supplierPhoneInput = '';
 	const addFood = () => {
-		//console.log('addFood', trackInput.value);
-		//onAddFood(trackInput.value);
 		new_food_item.name = nameInput.value;
 		new_food_item.ingredient = ingredientsInput.value;
 		new_food_item.price = priceInput.value;
@@ -28,7 +26,6 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 		new_food_item.supplierName = supplierNameInput.value;
 		new_food_item.supplierLocation = supplierLocationInput.value;
 		new_food_item.supplierPhone = supplierPhoneInput.value;
-
 		onAddFood(new_food_item);
 	}
 
@@ -39,7 +36,7 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 				<section className="app-body">
 					<ChapterHeader name="Add new food" icon="icon-food-add" />
 					<div className=''>
-						<form className='form bg-white r form_bot-padding'>
+						<form className='form bg-white r'>
 							<fieldset className="form__fieldset">
 								<div className="form__fieldset__title">
 									<div className="container">
@@ -117,13 +114,6 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 			</div>
     );
 }
-/*
-export default reduxForm({
-	form: 'foodItem',
-	fields: ['name, ingredients'],
-
-})(FoodAddForm);
-*/
 
 export default connect(
 	(state, ownProps) => ({

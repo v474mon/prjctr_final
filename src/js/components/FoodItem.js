@@ -5,8 +5,8 @@ import AppHeader from './app-header';
 import ChapterHeader from './chapter-header';
 
 const FoodItem = (props)  => {
-
 	const item = props.foodItem;
+	const supplier = props.supplier;
 
   return (
 		<div>
@@ -47,7 +47,7 @@ const FoodItem = (props)  => {
 					<section className="form__fieldset">
 						<div className="form__fieldset__title">
 							<div className="container">
-								<span className="icon icon-camera"></span> Photos
+								<span className="icon icon-camera"></span> Photo
 							</div>
 						</div>
 						<div className="text-center">
@@ -58,13 +58,13 @@ const FoodItem = (props)  => {
 					<section className="form__fieldset bg-white">
 							<div className="form__fieldset__title">
 								<div className="container">
-									<span className="icon icon-about-food"></span> About Food
+									<span className="icon icon-supplier-info"></span> Supplier Info
 								</div>
 							</div>
 							<article className="form__fieldset__field">
 								<div className="container">
 									<div className="form__fieldset__text-content">
-										{item.supplierName}
+										{supplier.get('name')}
 									</div>
 									<div className="small_label">Supplier Name</div>
 								</div>
@@ -72,20 +72,35 @@ const FoodItem = (props)  => {
 							<article className="form__fieldset__field">
 								<div className="container">
 									<div className="form__fieldset__text-content">
-										{item.supplierLocation}
+										{supplier.get('location')}
 									</div>
 									<div className="small_label">Supplier Location</div>
 								</div>
 							</article>
-							<article className="form__fieldset__field">
-								<div className="container">
-									<div className="form__fieldset__text-content">
-										{item.supplierPhone}
-									</div>
-									<div className="small_label">Supplier Phone</div>
-								</div>
-							</article>
 						</section>
+						<section className="form__fieldset bg-white">
+								<div className="form__fieldset__title">
+									<div className="container">
+										<span className="icon icon-phone"></span> Support
+									</div>
+								</div>
+								<article className="form__fieldset__field">
+									<div className="container">
+										<div className="form__fieldset__text-content">
+											{supplier.get('phone')}
+										</div>
+										<div className="small_label">Customer Support</div>
+									</div>
+								</article>
+								<article className="form__fieldset__field">
+									<div className="container">
+										<div className="form__fieldset__text-content">
+											{supplier.get('email')}
+										</div>
+										<div className="small_label">Feedback</div>
+									</div>
+								</article>
+							</section>
 					</div>
 			</section>
 			<Menu />
