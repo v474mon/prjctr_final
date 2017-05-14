@@ -6,7 +6,7 @@ class AppHeader extends Component {
 	render(){
     return (
 			<div className="app-header">
-				<div className="app-header__btn-link app-return-link" onClick={browserHistory.goBack}> &lt; </div>
+				<div className="app-header__btn-link app-return-link" onClick={browserHistory.goBack}></div>
 			</div>
 
 		)

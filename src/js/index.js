@@ -27,7 +27,7 @@ ReactDOM.render(
 	<Provider store={store}>
 		<Router history={history}>
 			<div>
-				<Route path="/" component={LoginForm} />
+				<Route path="/" component={About} />
 				<Route path="/food-list" component={FoodListContainer} />
 				<Route path="/food-add" component={FoodAddForm} />
 				<Route path="/food-list/:id" component={FoodItemContainer} />

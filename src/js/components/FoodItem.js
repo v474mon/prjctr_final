@@ -16,7 +16,9 @@ const FoodItem = (props)  => {
 				<div className='form r form_bot-padding'>
 					<section className="form__fieldset bg-white">
 						<div className="form__fieldset__title">
-							<span className="icon icon-about-food"></span> About Food
+							<div className="container">
+								<span className="icon icon-about-food"></span> About Food
+							</div>
 						</div>
 						<article className="form__fieldset__field">
 								<div className="container">
@@ -44,16 +46,20 @@ const FoodItem = (props)  => {
 					</section>
 					<section className="form__fieldset">
 						<div className="form__fieldset__title">
-							<span className="icon icon-camera"></span> Photos
+							<div className="container">
+								<span className="icon icon-camera"></span> Photos
+							</div>
 						</div>
-						<div className="">
+						<div className="text-center">
 							<img src={`src/img/${item.img}`} alt={item.name} className="cards__item__img" />
 						</div>
 					</section>
 
 					<section className="form__fieldset bg-white">
 							<div className="form__fieldset__title">
-								<span className="icon icon-about-food"></span> About Food
+								<div className="container">
+									<span className="icon icon-about-food"></span> About Food
+								</div>
 							</div>
 							<article className="form__fieldset__field">
 								<div className="container">
@@ -82,6 +88,7 @@ const FoodItem = (props)  => {
 						</section>
 					</div>
 			</section>
+			<Menu />
 		</div>
     );
 }

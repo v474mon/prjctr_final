@@ -25,12 +25,16 @@ $primary-color: #cb202d
 	-moz-box-shadow: $top $left $blur $color
 	box-shadow: $top $left $blur $color
 
+@mixin icon_no_repeat
+	background-position: center
+	background-repeat: no-repeat
+	background-size: contain
+
 @mixin big_round_pic
-	width: 100px
-	height: 100px
+	width: 80px
+	height: 80px
 	border: 2px solid white
 	position: absolute
 	z-index: 2
-	background: #cb202d
-	background-position: center
-	background-repeat: no-repeat
+	background-color: #cb202d
+	@include icon_no_repeat

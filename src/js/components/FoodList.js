@@ -33,7 +33,9 @@ const FoodList = (props)  => {
 					))}
 					</ul>
 					{foodListCount == 0 > 0 &&
-		        <p>No food added yet</p>
+						<div>
+		        	<p>No food added yet</p>
+						</div>
       		}
 				</div>
 			</section>

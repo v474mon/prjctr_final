@@ -37,31 +37,35 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 			<div>
 				<AppHeader  />
 				<section className="app-body">
-					<ChapterHeader name="Add new food" icon="icon-food-list" />
+					<ChapterHeader name="Add new food" icon="icon-food-add" />
 					<div className=''>
-						<form
-							className='form bg-white r form_bot-padding'
-						>
-
+						<form className='form bg-white r form_bot-padding'>
 							<fieldset className="form__fieldset">
 								<div className="form__fieldset__title">
-									<span className="icon icon-about-food"></span> About Food
-								</div>
-								<div className="form__fieldset__field">
-									<input type="text" placeholder="Food Title" className="form-control" type="text" ref={(input) => {nameInput = input}} />
-								</div>
-								<div className="form__fieldset__field">
-									<input type="text" placeholder="Ingredients" className="form-control" ref={(input) => {ingredientsInput = input}}  />
-								</div>
-								<div className="row clearfix">
-									<div className="col-md-6">
-										<div className="form__fieldset__field">
-											<input type="text" placeholder="Price" className="form-control" ref={(input) => {priceInput = input}} />
-										</div>
+									<div className="container">
+										<span className="icon icon-about-food"></span> About Food
 									</div>
-									<div className="col-md-6">
-										<div className="form__fieldset__field">
-											<input type="text" placeholder="Per Person" className="form-control" ref={(input) => {perPersonInput = input}} />
+								</div>
+
+								<div className="form__fieldset__field">
+									<div className="container">
+										<input type="text" placeholder="Food Title" className="form-control" type="text" ref={(input) => {nameInput = input}} />
+									</div>
+								</div>
+								<div className="form__fieldset__field">
+									<div className="container">
+										<input type="text" placeholder="Ingredients" className="form-control" ref={(input) => {ingredientsInput = input}}  />
+									</div>
+								</div>
+								<div className="form__fieldset__field">
+									<div className="container">
+										<div className="row clearfix">
+											<div className="col-md-6 col-sm-6 col-xs-6">
+												<input type="text" placeholder="Price" className="form-control" ref={(input) => {priceInput = input}} />
+											</div>
+											<div className="col-md-6 col-sm-6 col-xs-6">
+												<input type="text" placeholder="Per Person" className="form-control" ref={(input) => {perPersonInput = input}} />
+											</div>
 										</div>
 									</div>
 								</div>
@@ -69,7 +73,9 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 
 							<fieldset className="form__fieldset">
 								<div className="form__fieldset__title">
-									<span className="icon icon-camera"></span> Photos
+									<div className="container">
+										<span className="icon icon-camera"></span> Photos
+									</div>
 								</div>
 								<div className="form__fieldset__field">
 									<div className="text-center">
@@ -81,20 +87,30 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 
 							<fieldset className="form__fieldset">
 								<div className="form__fieldset__title">
-									<span className="icon icon-supplier"></span> Supplier Info
+									<div className="container">
+										<span className="icon icon-supplier"></span> Supplier Info
+									</div>
 								</div>
-								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Name" className="form-control" ref={(input) => {supplierNameInput = input}}  />
-								</div>
-								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Location" className="form-control" ref={(input) => {supplierLocationInput = input}}  />
-								</div>
-								<div className="form__fieldset__field">
-									<input type="text" placeholder="Supplier Phone" className="form-control" ref={(input) => {supplierPhoneInput = input}}  />
+								<div className="">
+									<div className="form__fieldset__field">
+										<div className="container">
+											<input type="text" placeholder="Supplier Name" className="form-control" ref={(input) => {supplierNameInput = input}}  />
+										</div>
+									</div>
+									<div className="form__fieldset__field">
+										<div className="container">
+											<input type="text" placeholder="Supplier Location" className="form-control" ref={(input) => {supplierLocationInput = input}}  />
+										</div>
+									</div>
+									<div className="form__fieldset__field">
+										<div className="container">
+											<input type="text" placeholder="Supplier Phone" className="form-control" ref={(input) => {supplierPhoneInput = input}}  />
+										</div>
+									</div>
 								</div>
 							</fieldset>
 
-							<button className="form__submit" type="button" onClick={addFood}>Submit</button>
+							<button className="form__submit submit_simple" type="button" onClick={addFood}>Submit</button>
 						</form>
 					</div>
 				</section>

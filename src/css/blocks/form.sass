@@ -30,6 +30,7 @@
 	+border-radius(50%)
 	bottom: 10px
 	left: 5px
+	background-image: url(/src/img/avatar.png)
 
 .form__fieldset
 	border: none
@@ -43,14 +44,13 @@
 	& .icon
 		width: 20px
 		height: 20px
-		background: pink
 
 .form__fieldset__field
 	border-bottom: solid #e8e8e8
-	padding: 10px
+	padding: 15px
 
 .form__fieldset__field .form-control
-	border: solid red
+	border: solid #cb202d
 	border-width: 0 0 1px 0
 	height: 30px
 	width: 100%
@@ -60,12 +60,19 @@
 	position: absolute
 	bottom: 0
 	width: 100%
-	padding: 20px
+	padding: 12px
 	text-align: center
 	color: white
 	font-size: 20px
 	border: none
 	background: $primary-color
+
+.submit_simple
+	background-image: url(../img/btn-submit.png)
+	background-size: 100px auto
+	background-repeat: no-repeat
+	background-position: center
+	text-indent: -90000px
 
 .form__btn__take-photo
 	background-image: url(../img/camera.png)
