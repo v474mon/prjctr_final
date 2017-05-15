@@ -59,10 +59,10 @@ const FoodAdd = (props)  => {
 									<div className="container">
 										<div className="row clearfix">
 											<div className="col-md-6 col-sm-6 col-xs-6">
-												<input type="text" placeholder="Price" className="form-control" ref={(input) => {priceInput = input}} />
+												<input type="number" placeholder="Price" className="form-control" ref={(input) => {priceInput = input}} />
 											</div>
 											<div className="col-md-6 col-sm-6 col-xs-6">
-												<input type="text" placeholder="Per Person" className="form-control" ref={(input) => {perPersonInput = input}} />
+												<input type="number" placeholder="Per Person" className="form-control" ref={(input) => {perPersonInput = input}} />
 											</div>
 										</div>
 									</div>

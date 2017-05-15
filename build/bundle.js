@@ -46403,14 +46403,14 @@
 										_react2.default.createElement(
 											'div',
 											{ className: 'col-md-6 col-sm-6 col-xs-6' },
-											_react2.default.createElement('input', { type: 'text', placeholder: 'Price', className: 'form-control', ref: function ref(input) {
+											_react2.default.createElement('input', { type: 'number', placeholder: 'Price', className: 'form-control', ref: function ref(input) {
 													priceInput = input;
 												} })
 										),
 										_react2.default.createElement(
 											'div',
 											{ className: 'col-md-6 col-sm-6 col-xs-6' },
-											_react2.default.createElement('input', { type: 'text', placeholder: 'Per Person', className: 'form-control', ref: function ref(input) {
+											_react2.default.createElement('input', { type: 'number', placeholder: 'Per Person', className: 'form-control', ref: function ref(input) {
 													perPersonInput = input;
 												} })
 										)
