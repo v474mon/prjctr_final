@@ -1,10 +1,10 @@
-# Using Webpack with React / JSX / ES6 / Babel 6, SASS and image files
+# Projector final project
+- Single page Application allows modify personal information (Profile) and add Food into Food List.
+- localStorage is used for sroring user data.
 
-## A minimalist boilerplate that takes care of:
-- React JSX with Babel 6
-- ES6 syntax with Babel 6
-- Sass
-- Image files
+## Technologies
+- App made on ReactJs, Redux
+- HTML markup on BEM and SaaS-preprocessor
 
 ## How to use
 ```

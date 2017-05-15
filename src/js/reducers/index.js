@@ -8,7 +8,7 @@ import profile from './profile';
 
 export default combineReducers({
 	routing: routerReducer,
-	form: formReducer,
+	//form: formReducer,
   foodList,
 	profile
 })

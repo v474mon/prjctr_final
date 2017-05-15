@@ -1,7 +1,7 @@
 {
-  "name": "Projector",
+  "name": "Prjctr_final_app",
   "version": "0.0.6",
-  "description": "React apps in ES6/JSX/SASS and built using webpack",
+  "description": "React apps using webpack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-server": "webpack-dev-server --hot --progress --colors",

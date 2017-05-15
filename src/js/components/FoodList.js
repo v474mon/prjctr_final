@@ -44,11 +44,3 @@ const FoodList = (props)  => {
     );
 }
 export default FoodList;
-/*
-<div className="cards__item__cover__title_num">
-	{item.get('ordered')} Pending ordered<br/>
-</div>
-<div className="cards__item__cover__title_num italic">
-	{item.get('sales')} Total Sales
-</div>
-*/

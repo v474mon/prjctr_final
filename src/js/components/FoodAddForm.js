@@ -76,10 +76,12 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 								</div>
 								<div className="form__fieldset__field">
 									<div className="text-center">
-										<p className="text-small">
-											Unfortunately, in this version it&rsquo;s impossible to upload photo.
-											Random picture would be placed automatically.
-										</p>
+										<div className="container">
+											<p className="text-small">
+												Unfortunately, in this version it&rsquo;s impossible to upload photo.
+												Random picture would be placed automatically.
+											</p>
+										</div>
 										<div className="form__btn__take-photo"></div>
 									</div>
 								</div>
