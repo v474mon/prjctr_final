@@ -61,7 +61,7 @@ const addProfile = (event) => {
 								<input type="email" placeholder="Email" defaultValue={profile.get('email')} className="form-control" ref={(input) => {emailInput = input}}  />
 							</div>
 							<div className="form__fieldset__field">
-								<input type="text" placeholder="Phone Number" defaultValue={profile.get('phone')} className="form-control" ref={(input) => {phoneInput = input}} />
+								<input type="tel" placeholder="Phone Number" defaultValue={profile.get('phone')} className="form-control" ref={(input) => {phoneInput = input}} />
 							</div>
 						</div>
 					</fieldset>
