@@ -9,8 +9,6 @@ const imm_profile = fromJS(initialState);
 const init = Map({});
 export default function(profile=imm_profile, action) {
 	if(action.type === 'ADD_PROFILE'){
-		console.log('ADD_PROFILE action.payload');
-		console.log(action.payload)
 		const prof = action.payload;
 		const prof_obj = profile
 			.set('id', prof.id)

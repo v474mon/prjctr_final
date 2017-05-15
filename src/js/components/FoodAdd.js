@@ -1,15 +1,16 @@
+
 // Import React
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { reduxForm } from 'redux-form';
 
 import Menu from './Menu';
 import AppHeader from './app-header';
 import ChapterHeader from './chapter-header';
 
 // Create class called AppView that extends the base React Component class
-const FoodAddForm = ({ onAddFood, ownProps }) => {
+const FoodAdd = (props)  => {
+	const { onAddFood, ownProps} = props;
 	let new_food_item = {}
 	let nameInput = '';
 	let ingredientsInput = '';
@@ -94,24 +95,4 @@ const FoodAddForm = ({ onAddFood, ownProps }) => {
 			</div>
     );
 }
-
-export default connect(
-	(state, ownProps) => ({
-		//tracks: state.tracks.filter(track => track.name.includes(state.filterTracks)),
-		ownProps
-	}),
-	dispatch => ({
-		onAddFood: (new_food_item) => {
-			const payload = {
-				id: parseInt(Date.now().toString()),
-				img: "food"+Math.floor(Math.random()*12+1)+".jpg",
-				name: new_food_item.name,
-				ingredient:  new_food_item.ingredient,
-				price: new_food_item.price,
-				perPerson: new_food_item.perPerson
-			};
-			dispatch({ type: 'ADD_FOOD', payload})
-			window.location.href ='#/food-list';
-		}
-	})
-)(FoodAddForm);
+export default FoodAdd;

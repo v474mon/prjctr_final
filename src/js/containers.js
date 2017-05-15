@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-//import TodoList  from './components/TodoList.js';
 import FoodList   from './components/FoodList';
 import FoodItem   from './components/FoodItem';
 import ProfileAdd from './components/ProfileAdd';
+import FoodAdd from './components/FoodAdd';
 import { List, Map } from 'immutable';
 
-import { onAddProfile } from './actions';
+import { onAddProfile, onAddFood } from './actions';
 
 
 export const FoodListContainer = connect(
@@ -74,3 +74,16 @@ export const ProfileAddContainer = connect(
 		};
 	}
 )(ProfileAdd);
+
+
+
+export const FoodAddContainer = connect(
+	function mapStateToProps(state, ownProps) {
+		return { ownProps };
+	},
+	function mapDispatchToProps(dispatch) {
+		return {
+			onAddFood: obj => dispatch(onAddFood(obj))
+		};
+	}
+)(FoodAdd);
