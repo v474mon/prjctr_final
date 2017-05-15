@@ -35,12 +35,7 @@ export const FoodItemContainer = connect(
 						img: t.get('img'),
 						ingredient: t.get('ingredient'),
 						price: t.get('price'),
-						perPerson: t.get('perPerson'),
-						supplierName: t.get('supplierName'),
-						supplierPhone: t.get('supplierPhone'),
-						supplierLocation: t.get('supplierLocation'),
-						sales: t.get('sales'),
-						views: t.get('views')
+						perPerson: t.get('perPerson')
 					};
 				}
 			})
@@ -78,7 +73,7 @@ export const ProfileAddContainer = connect(
 
 
 export const FoodAddContainer = connect(
-	function mapStateToProps(state, ownProps) {
+	function mapStateToProps(ownProps) {
 		return { ownProps };
 	},
 	function mapDispatchToProps(dispatch) {
