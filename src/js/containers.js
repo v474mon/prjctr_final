@@ -10,7 +10,7 @@ import { onAddProfile, onAddFood } from './actions';
 
 export const FoodListContainer = connect(
 	function mapStateToProps(state) {
-		return { foodList: state };
+		return { foodList: state.foodList };
 	},
 	function mapDispatchToProps(dispatch) {
 		return {

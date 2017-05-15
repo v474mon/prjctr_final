@@ -9,7 +9,7 @@ import ChapterHeader from './chapter-header';
 
 
 const FoodList = (props)  => {
-	const { foodList } = props.foodList;
+	const { foodList } = props;
 	const foodListCount = foodList.size;
 
   return (
