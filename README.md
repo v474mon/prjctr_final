@@ -1,6 +1,6 @@
 # Projector final project
 - Single page Application allows modify personal information (Profile) and add Food into Food List.
-- localStorage is used for sroring user data.
+- localStorage is used for storing user data.
 
 ## Technologies
 - App made on ReactJs, Redux

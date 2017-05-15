@@ -14,7 +14,7 @@ class About extends Component {
 						<section>
 							<h2>Projector final project</h2>
 							<p>Single page Application allows modify personal information (Profile) and add Food into Food List.</p>
-							<p>localStorage is used for sroring user data.</p>
+							<p>localStorage is used for storing user data.</p>
 						</section>
 						<section>
 							<h3>Technologies</h3>
